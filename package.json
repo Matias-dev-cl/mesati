@@ -13,6 +13,7 @@
     "dev:web": "npm run dev --workspace @mesati/web",
     "db:up": "docker compose up -d --wait",
     "db:stop": "docker compose stop",
+    "db:prepare": "npm run db:prepare --workspace @mesati/api",
     "typecheck": "npm run typecheck --workspaces",
     "build": "npm run build --workspaces",
     "lint": "eslint .",
