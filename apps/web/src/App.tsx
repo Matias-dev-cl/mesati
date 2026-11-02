@@ -62,13 +62,19 @@ export function App() {
         </a>
         <span className="stage">Proyecto en desarrollo</span>
       </header>
+      <div className="workspace-bar">
+        <span>
+          ESPACIO DE TRABAJO <b>/</b> Vista general
+        </span>
+        <span className="avatar">MM</span>
+      </div>
       <main>
         <section className="intro" aria-labelledby="welcome-title">
-          <p className="eyebrow">SOPORTE CON SEGUIMIENTO</p>
+          <p className="eyebrow">TU CENTRO DE OPERACIONES TI</p>
           <h1 id="welcome-title">
-            Cada solicitud,
+            El soporte fluye.
             <br />
-            un siguiente paso.
+            Tu equipo avanza.
           </h1>
           <p className="lead">
             Un lugar para organizar la atención, registrar soluciones y conocer
@@ -78,10 +84,10 @@ export function App() {
 
         <section className="connection-card" aria-labelledby="connection-title">
           <div className="card-heading">
-            <p className="eyebrow">PRIMERA ENTREGA</p>
+            <p className="eyebrow">ESTADO DEL ENTORNO</p>
             <span className="step-number">01 / 06</span>
           </div>
-          <h2 id="connection-title">Una base para comenzar</h2>
+          <h2 id="connection-title">Todo comienza conectado</h2>
           <p>Estamos preparando el entorno antes de incorporar los tickets.</p>
           <div
             className={`connection-status ${connection}`}
@@ -111,22 +117,31 @@ export function App() {
         </section>
 
         <section className="roadmap" aria-labelledby="next-title">
-          <h2 id="next-title">Lo que construiremos</h2>
+          <h2 id="next-title">Un espacio para cada parte del proceso</h2>
           <div className="feature-grid">
             <article>
-              <span className="feature-index">01</span>
+              <span className="feature-index">01 / SOLICITUDES</span>
               <h3>Solicitudes claras</h3>
               <p>Registrar una falla y consultar su avance.</p>
+              <span className="coming-soon">
+                En desarrollo <span aria-hidden="true">↗</span>
+              </span>
             </article>
             <article>
-              <span className="feature-index">02</span>
+              <span className="feature-index">02 / SEGUIMIENTO</span>
               <h3>Atención con historia</h3>
               <p>Asignar, diagnosticar y dejar una solución registrada.</p>
+              <span className="coming-soon">
+                En desarrollo <span aria-hidden="true">↗</span>
+              </span>
             </article>
             <article>
-              <span className="feature-index">03</span>
+              <span className="feature-index">03 / INVENTARIO</span>
               <h3>Equipos conectados</h3>
               <p>Relacionar cada solicitud con el equipo que la origina.</p>
+              <span className="coming-soon">
+                En desarrollo <span aria-hidden="true">↗</span>
+              </span>
             </article>
           </div>
         </section>
