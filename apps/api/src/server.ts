@@ -1,10 +1,12 @@
 import { createApp } from './app.js';
 import { readConfig } from './config.js';
 import { createDatabasePool } from './db/pool.js';
+import { createTicketRouter } from './modules/tickets/routes.js';
 
 const config = readConfig(process.env);
 const pool = createDatabasePool(config.databaseUrl);
 const app = createApp({
+  ticketRouter: config.localDemoEnabled ? createTicketRouter(pool) : undefined,
   checkDatabase: async () => {
     await pool.query('SELECT 1');
   },

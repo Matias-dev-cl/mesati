@@ -56,3 +56,9 @@ Las verificaciones y evidencias se registrarán al completar cada parte.
 ## Verificación de la base
 
 Preparación ejecutada dos veces: la primera aplicó una migración y la segunda ninguna. PostgreSQL confirmó un único usuario demo y cero tickets. TypeScript verificó los nuevos módulos sin errores.
+
+## Verificación de la API
+
+Aprobadas 11 pruebas unitarias y 26 pruebas de integración con PostgreSQL real en una base temporal aislada, eliminada al finalizar. Se comprobaron entradas inválidas, campos reservados, límites, SQL tratado como texto, paginación, alcance del solicitante, formatos HTTP y rollback si falla el evento. También pasaron lint y TypeScript.
+
+Ejecutar integración con npm run test:integration. El usuario local de PostgreSQL necesita permiso para crear una base temporal; la prueba genera su propio nombre mesati_test más UUID y nunca vacía la base de desarrollo.

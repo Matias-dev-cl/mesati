@@ -4,6 +4,22 @@ import { readConfig } from '../src/config.js';
 const databaseUrl = 'postgresql://demo:demo@localhost:5434/mesati';
 
 describe('configuración de inicio', () => {
+  it('deshabilita la demo por defecto y la prohíbe en producción', () => {
+    expect(readConfig({ DATABASE_URL: databaseUrl }).localDemoEnabled).toBe(
+      false,
+    );
+    expect(
+      readConfig({ DATABASE_URL: databaseUrl, LOCAL_DEMO_ENABLED: 'true' })
+        .localDemoEnabled,
+    ).toBe(true);
+    expect(() =>
+      readConfig({
+        DATABASE_URL: databaseUrl,
+        LOCAL_DEMO_ENABLED: 'true',
+        NODE_ENV: 'production',
+      }),
+    ).toThrow('producción');
+  });
   it('exige la conexión a la base y no expone su valor en errores', () => {
     expect(() => readConfig({})).toThrow('Falta DATABASE_URL');
     expect(() => readConfig({ DATABASE_URL: 'secreto-inválido' })).toThrow(

@@ -19,5 +19,9 @@ export function readConfig(environment: NodeJS.ProcessEnv) {
     throw new Error('API_PORT debe ser un entero entre 1 y 65535.');
   }
 
-  return { databaseUrl, port };
+  const localDemoEnabled = environment.LOCAL_DEMO_ENABLED === 'true';
+  if (localDemoEnabled && environment.NODE_ENV === 'production') {
+    throw new Error('El modo demo local no se puede habilitar en producción.');
+  }
+  return { databaseUrl, port, localDemoEnabled };
 }

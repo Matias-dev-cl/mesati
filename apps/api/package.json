@@ -9,7 +9,8 @@
     "build": "tsc -p tsconfig.build.json",
     "start": "node --env-file=../../.env dist/server.js",
     "typecheck": "tsc --noEmit",
-    "test": "vitest run"
+    "test": "vitest run --exclude **/*.integration.test.ts",
+    "test:integration": "node --env-file=../../.env ../../node_modules/vitest/vitest.mjs run tests/tickets.integration.test.ts"
   },
   "dependencies": {
     "express": "5.3.0",

@@ -20,6 +20,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "test": "npm run test --workspace @mesati/api",
+    "test:integration": "npm run test:integration --workspace @mesati/api",
     "check": "npm run format:check && npm run lint && npm run typecheck && npm test && npm run build"
   },
   "type": "module",
