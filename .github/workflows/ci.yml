@@ -1,0 +1,46 @@
+name: Verificar MesaTI
+
+on:
+  push:
+    branches: [main, 'codex/**']
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    name: Calidad y pruebas con PostgreSQL
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    services:
+      postgres:
+        image: postgres:17-alpine
+        env:
+          POSTGRES_USER: mesati
+          POSTGRES_PASSWORD: mesati_local_only
+          POSTGRES_DB: mesati
+        ports:
+          - 5434:5432
+        options: >-
+          --health-cmd "pg_isready -U mesati -d mesati"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 12
+    steps:
+      - name: Obtener código
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Preparar Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: .node-version
+          cache: npm
+      - name: Instalar versiones del lockfile
+        run: npm ci
+      - name: Preparar configuración ficticia de pruebas
+        run: cp .env.example .env
+      - name: Revisar formato, lint, tipos, pruebas unitarias y compilación
+        run: npm run check
+      - name: Probar integración con PostgreSQL real
+        run: npm run test:integration
