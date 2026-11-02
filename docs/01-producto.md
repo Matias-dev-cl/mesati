@@ -6,16 +6,16 @@ Una empresa ficticia recibe solicitudes de soporte dispersas y no puede consulta
 
 ## Usuarios y permisos
 
-| Acción | Solicitante | Técnico |
-| --- | --- | --- |
-| Crear ticket | Sí, a su nombre | Sí, a su nombre |
-| Leer tickets, comentarios e historial | Solo propios | Todos |
-| Comentar | En sus tickets activos | En cualquier ticket activo |
-| Tomar ticket pendiente | No | Sí, se lo asigna a sí mismo |
-| Resolver ticket | No | Solo el técnico asignado |
-| Consultar inventario | Solo equipos activos asignados a él | Todos |
-| Crear o editar equipos | No | Sí |
-| Ver indicadores | De sus tickets | De todos |
+| Acción                                | Solicitante                         | Técnico                     |
+| ------------------------------------- | ----------------------------------- | --------------------------- |
+| Crear ticket                          | Sí, a su nombre                     | Sí, a su nombre             |
+| Leer tickets, comentarios e historial | Solo propios                        | Todos                       |
+| Comentar                              | En sus tickets activos              | En cualquier ticket activo  |
+| Tomar ticket pendiente                | No                                  | Sí, se lo asigna a sí mismo |
+| Resolver ticket                       | No                                  | Solo el técnico asignado    |
+| Consultar inventario                  | Solo equipos activos asignados a él | Todos                       |
+| Crear o editar equipos                | No                                  | Sí                          |
+| Ver indicadores                       | De sus tickets                      | De todos                    |
 
 Los permisos se verifican en el servidor en cada solicitud. Ocultar un botón no constituye autorización. En el MVP no habrá registro público ni gestión de usuarios: las cuentas se cargarán mediante datos demo locales.
 

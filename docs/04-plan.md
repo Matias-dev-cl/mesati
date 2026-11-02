@@ -2,15 +2,15 @@
 
 Sin fechas estimadas todavía: el ritmo dependerá de que cada entrega funcione y se comprenda. Todas están pendientes salvo la base documental.
 
-| Etapa | Entregable | Verificación de salida | Concepto que Maty debe poder explicar |
-| --- | --- | --- | --- |
-| 0 — Base documental | Alcance, reglas, diseño y guía de trabajo | Documentos coherentes, sin prometer funciones existentes | Qué problema resuelve y qué queda fuera |
-| 1 — Entorno mínimo | React, API con health, PostgreSQL y configuración de ejemplo | Inicio local reproducible desde instrucciones; conexión a la base comprobada | Qué ejecuta cada proceso y cómo se comunican |
-| 2 — Primer recorrido local | Migraciones, datos ficticios, crear y listar tickets desde React | Se conserva un ticket tras reiniciar; validaciones y paginación comprobadas | Petición, validación, SQL y respuesta |
-| 3 — Acceso y permisos | Sesiones, login/logout, roles y consultas limitadas | Pruebas de acceso ajeno, sesión inválida y logout; retirar usuario temporal de etapa 2 | Autenticación, autorización y cookie |
-| 4 — Atención completa | Tomar, resolver, comentar e historial | Pruebas de transiciones, concurrencia y rollback | Por qué se necesita una transacción |
-| 5 — Inventario y consulta | Equipos, vínculos, filtros e indicadores | Permisos de equipos, código único y conteos reales | Relaciones y consultas de agregación |
-| 6 — Calidad y presentación | Revisión visual, pruebas, medición, README y capturas | Recorrido completo reproducible, revisión móvil/teclado y comprobaciones automatizadas | Decisiones, límites, un error corregido y una medición |
+| Etapa                      | Entregable                                                       | Verificación de salida                                                                 | Concepto que Maty debe poder explicar                  |
+| -------------------------- | ---------------------------------------------------------------- | -------------------------------------------------------------------------------------- | ------------------------------------------------------ |
+| 0 — Base documental        | Alcance, reglas, diseño y guía de trabajo                        | Documentos coherentes, sin prometer funciones existentes                               | Qué problema resuelve y qué queda fuera                |
+| 1 — Entorno mínimo         | React, API con health, PostgreSQL y configuración de ejemplo     | Inicio local reproducible desde instrucciones; conexión a la base comprobada           | Qué ejecuta cada proceso y cómo se comunican           |
+| 2 — Primer recorrido local | Migraciones, datos ficticios, crear y listar tickets desde React | Se conserva un ticket tras reiniciar; validaciones y paginación comprobadas            | Petición, validación, SQL y respuesta                  |
+| 3 — Acceso y permisos      | Sesiones, login/logout, roles y consultas limitadas              | Pruebas de acceso ajeno, sesión inválida y logout; retirar usuario temporal de etapa 2 | Autenticación, autorización y cookie                   |
+| 4 — Atención completa      | Tomar, resolver, comentar e historial                            | Pruebas de transiciones, concurrencia y rollback                                       | Por qué se necesita una transacción                    |
+| 5 — Inventario y consulta  | Equipos, vínculos, filtros e indicadores                         | Permisos de equipos, código único y conteos reales                                     | Relaciones y consultas de agregación                   |
+| 6 — Calidad y presentación | Revisión visual, pruebas, medición, README y capturas            | Recorrido completo reproducible, revisión móvil/teclado y comprobaciones automatizadas | Decisiones, límites, un error corregido y una medición |
 
 La etapa 0 es una primera versión revisable: se ajusta cuando se descubre una necesidad, registrando la razón. Las etapas no equivalen necesariamente a un solo commit.
 

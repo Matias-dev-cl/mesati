@@ -28,14 +28,14 @@ Dentro de un módulo, separar rutas/controladores HTTP, reglas de negocio y cons
 
 ## Decisiones iniciales
 
-| ID | Decisión y motivo | Coste o alternativa |
-| --- | --- | --- |
-| D-01 | TypeScript en interfaz y servidor para practicar un mismo lenguaje y contratos explícitos | Django aprovecharía experiencia previa, pero aquí se prioriza aprender Node.js |
-| D-02 | Un repositorio con dos aplicaciones, un servidor y una base | No se necesitan microservicios para este alcance |
-| D-03 | PostgreSQL y consultas SQL parametrizadas con `pg` para comprender SQL | Un ORM se reconsiderará solo si aparece una necesidad; las migraciones requieren disciplina |
-| D-04 | API REST con prefijo `/api/v1` | Los contratos se documentan antes de implementar cada recurso |
-| D-05 | Sesiones de servidor con cookie, buscando un mismo origen público para interfaz y API | Requiere gestionar expiración y protección frente a CSRF; evita añadir renovación de JWT al MVP |
-| D-06 | Sin MongoDB en el MVP | La práctica no relacional queda pendiente y no se presentará como implementada |
+| ID   | Decisión y motivo                                                                         | Coste o alternativa                                                                             |
+| ---- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| D-01 | TypeScript en interfaz y servidor para practicar un mismo lenguaje y contratos explícitos | Django aprovecharía experiencia previa, pero aquí se prioriza aprender Node.js                  |
+| D-02 | Un repositorio con dos aplicaciones, un servidor y una base                               | No se necesitan microservicios para este alcance                                                |
+| D-03 | PostgreSQL y consultas SQL parametrizadas con `pg` para comprender SQL                    | Un ORM se reconsiderará solo si aparece una necesidad; las migraciones requieren disciplina     |
+| D-04 | API REST con prefijo `/api/v1`                                                            | Los contratos se documentan antes de implementar cada recurso                                   |
+| D-05 | Sesiones de servidor con cookie, buscando un mismo origen público para interfaz y API     | Requiere gestionar expiración y protección frente a CSRF; evita añadir renovación de JWT al MVP |
+| D-06 | Sin MongoDB en el MVP                                                                     | La práctica no relacional queda pendiente y no se presentará como implementada                  |
 
 Si una decisión cambia, actualizar motivo, consecuencias y tareas afectadas en el mismo commit. Elegir versiones soportadas y verificar documentación oficial al instalar dependencias.
 

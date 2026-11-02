@@ -4,14 +4,14 @@ Contrato preliminar. Se concretarán los esquemas completos de petición/respues
 
 ## Entidades
 
-| Tabla | Campos principales | Restricciones |
-| --- | --- | --- |
-| users | id, name, email, password_hash, role, created_at | Email único; rol solicitante o técnico |
-| assets | id, inventory_code, name, type, assigned_user_id, active, created_at, updated_at | Código único; usuario opcional |
-| tickets | id, title, description, category, priority, status, requester_id, technician_id, asset_id, resolution, created_at, updated_at, resolved_at | Solicitante obligatorio; técnico y equipo opcionales al crear |
-| comments | id, ticket_id, author_id, body, created_at | Ticket y autor obligatorios; sin edición en el MVP |
-| ticket_events | id, ticket_id, actor_id, event_type, from_status, to_status, created_at | Eventos de creación y transición, escritos por el servidor |
-| sessions | Por concretar con la biblioteca seleccionada | Persistencia y expiración definidas en la entrega de autenticación |
+| Tabla         | Campos principales                                                                                                                         | Restricciones                                                      |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------ |
+| users         | id, name, email, password_hash, role, created_at                                                                                           | Email único; rol solicitante o técnico                             |
+| assets        | id, inventory_code, name, type, assigned_user_id, active, created_at, updated_at                                                           | Código único; usuario opcional                                     |
+| tickets       | id, title, description, category, priority, status, requester_id, technician_id, asset_id, resolution, created_at, updated_at, resolved_at | Solicitante obligatorio; técnico y equipo opcionales al crear      |
+| comments      | id, ticket_id, author_id, body, created_at                                                                                                 | Ticket y autor obligatorios; sin edición en el MVP                 |
+| ticket_events | id, ticket_id, actor_id, event_type, from_status, to_status, created_at                                                                    | Eventos de creación y transición, escritos por el servidor         |
+| sessions      | Por concretar con la biblioteca seleccionada                                                                                               | Persistencia y expiración definidas en la entrega de autenticación |
 
 Tipos previstos: identificadores enteros generados y fechas con zona horaria (`timestamptz`), almacenadas con referencia UTC y presentadas según configuración de la interfaz. Las claves foráneas conservan referencias; no se borran usuarios, equipos ni tickets mediante la API del MVP.
 
@@ -25,22 +25,22 @@ El rol del técnico y el acceso al equipo se validan en la aplicación. Un cambi
 
 ## Endpoints previstos
 
-| Método y ruta bajo `/api/v1` | Comportamiento |
-| --- | --- |
-| GET /health | Estado básico del servicio, sin secretos ni diagnósticos internos |
-| POST /auth/login | Validar credenciales y crear sesión |
-| POST /auth/logout | Invalidar sesión |
-| GET /auth/me | Consultar usuario autenticado |
-| GET /tickets | Listado visible, paginado y filtrado |
-| POST /tickets | Crear ticket propio y evento inicial |
-| GET /tickets/:id | Detalle autorizado con comentarios e historial |
-| POST /tickets/:id/take | Tomar pendiente y registrar transición |
-| POST /tickets/:id/resolve | Resolver con diagnóstico y registrar transición |
-| POST /tickets/:id/comments | Añadir comentario a un ticket activo autorizado |
-| GET /assets | Inventario visible y paginado |
-| POST /assets | Crear equipo, solo técnicos |
-| PATCH /assets/:id | Editar equipo o desactivarlo, solo técnicos |
-| GET /dashboard | Conteos por estado dentro del alcance del usuario |
+| Método y ruta bajo `/api/v1` | Comportamiento                                                    |
+| ---------------------------- | ----------------------------------------------------------------- |
+| GET /health                  | Estado básico del servicio, sin secretos ni diagnósticos internos |
+| POST /auth/login             | Validar credenciales y crear sesión                               |
+| POST /auth/logout            | Invalidar sesión                                                  |
+| GET /auth/me                 | Consultar usuario autenticado                                     |
+| GET /tickets                 | Listado visible, paginado y filtrado                              |
+| POST /tickets                | Crear ticket propio y evento inicial                              |
+| GET /tickets/:id             | Detalle autorizado con comentarios e historial                    |
+| POST /tickets/:id/take       | Tomar pendiente y registrar transición                            |
+| POST /tickets/:id/resolve    | Resolver con diagnóstico y registrar transición                   |
+| POST /tickets/:id/comments   | Añadir comentario a un ticket activo autorizado                   |
+| GET /assets                  | Inventario visible y paginado                                     |
+| POST /assets                 | Crear equipo, solo técnicos                                       |
+| PATCH /assets/:id            | Editar equipo o desactivarlo, solo técnicos                       |
+| GET /dashboard               | Conteos por estado dentro del alcance del usuario                 |
 
 La primera entrega de tickets, previa al login, será exclusivamente local: usará un usuario ficticio definido por el servidor. No aceptará identidades arbitrarias del navegador ni se desplegará con ese acceso temporal.
 

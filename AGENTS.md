@@ -8,4 +8,4 @@
 - Comentar código cuando explique el porqué; evitar comentarios redundantes y complejidad anticipada.
 - No atribuir al autor conocimientos o experiencia que todavía está practicando.
 - No modificar proyectos vecinos, FlowWeb ni el CV.
-- La fase actual es documental. Implementar por etapas en la siguiente fase; no publicar ni desplegar por iniciativa propia.
+- Maty autorizó iniciar la implementación. Trabajar por las etapas documentadas; no publicar ni desplegar por iniciativa propia.
