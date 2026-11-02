@@ -1,6 +1,6 @@
 # Arquitectura y registro de decisiones
 
-Estado: arquitectura inicial en implementación. Ya existen la interfaz, la API y el pool de conexión; los módulos de negocio y las migraciones siguen pendientes. La conexión a una base real aún no está verificada.
+Estado: etapas 1 y 2 implementadas localmente. Existen interfaz, API de creación/listado, migraciones y PostgreSQL real verificado. Autenticación, atención e inventario siguen pendientes.
 
 ## Flujo
 
@@ -56,3 +56,7 @@ Estas medidas son tareas pendientes, no garantías de seguridad de una aplicaci�
 Las listas se paginan. Las transiciones y sus eventos se guardan en la misma transacción. Para tomar un ticket se actualizará condicionalmente por estado y asignación, comprobando filas afectadas; no basta con leer y después escribir sin protección.
 
 Los índices se justifican con consultas reales y datos sintéticos. La evidencia incluirá consulta, volumen, entorno y resultado de `EXPLAIN ANALYZE` antes/después, sin prometer mejoras antes de medirlas.
+
+## Decisión de la etapa 2
+
+El primer recorrido habilita un solicitante ficticio únicamente mediante LOCAL_DEMO_ENABLED. Usuarios todavía no tienen contraseña: la migración de autenticación incorporará ese dato en la etapa 3. El inventario y los comentarios no se crean anticipadamente. El backend concentra la identidad temporal en el módulo de tickets para retirarla al añadir sesiones. Consultar [el contrato implementado](07-primer-ticket.md).

@@ -62,3 +62,27 @@ Preparación ejecutada dos veces: la primera aplicó una migración y la segunda
 Aprobadas 11 pruebas unitarias y 26 pruebas de integración con PostgreSQL real en una base temporal aislada, eliminada al finalizar. Se comprobaron entradas inválidas, campos reservados, límites, SQL tratado como texto, paginación, alcance del solicitante, formatos HTTP y rollback si falla el evento. También pasaron lint y TypeScript.
 
 Ejecutar integración con npm run test:integration. El usuario local de PostgreSQL necesita permiso para crear una base temporal; la prueba genera su propio nombre mesati_test más UUID y nunca vacía la base de desarrollo.
+
+## Verificación de la interfaz y persistencia
+
+- Lista inicialmente vacía; creación desde el navegador del ticket #1 «La impresora de recepción no imprime».
+- Título compuesto solo de espacios rechazado: error asociado y foco en el campo, conservando los otros datos.
+- PostgreSQL detenido: error de envío y de listado, sin borrar el formulario.
+- PostgreSQL restaurado: envío exitoso, formulario limpio y listado actualizado con un registro real.
+- Descripción consultable al desplegar el título de la solicitud.
+- API, Vite y PostgreSQL detenidos y reiniciados: el ticket #1 sigue en el listado y conserva un evento de creación en la base.
+- Revisión en escritorio y móvil de 390 px, sin desbordamiento horizontal observado; selector de tamaño de página comprobado.
+
+Las pruebas manuales dejan un ticket ficticio útil para la demostración. Las 26 pruebas automatizadas usan una base independiente y no añaden datos a esta demo.
+
+![Crear y consultar una solicitud](evidencias/tickets-escritorio.jpg)
+
+## Ejercicio de comprensión
+
+1. Abrir MesaTI y registrar una solicitud ficticia diferente.
+2. Explicar por qué el servidor decide el solicitante y el estado aunque el formulario no los incluya.
+3. Identificar qué tabla guarda el problema y cuál registra su creación.
+4. Explicar por qué ticket y evento deben guardarse dentro de la misma transacción.
+5. Recargar la página y explicar por qué el ticket sigue ahí aunque el estado de React se haya reiniciado.
+
+Los endpoints de atención, login, equipos y comentarios aún no están implementados. Si se pierde la conexión durante un envío, revisar el listado antes de reenviar: esta versión bloquea el doble clic, pero todavía no implementa claves de idempotencia para reintentos después de una respuesta perdida.

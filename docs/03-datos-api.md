@@ -11,9 +11,11 @@ Contrato preliminar. Se concretarán los esquemas completos de petición/respues
 - Incluye `Cache-Control: no-store`; no devuelve detalles del error de PostgreSQL.
 - El 503 describe disponibilidad, por lo que utiliza `data` en lugar del formato de error de las operaciones de negocio.
 
-Una ruta inexistente responde 404 con `{ "error": { "code": "NOT_FOUND", "message": "Ruta no encontrada." } }`. Los demás endpoints de este documento todavía son propuestas.
+Una ruta inexistente responde 404 con `{ "error": { "code": "NOT_FOUND", "message": "Ruta no encontrada." } }`. POST y GET de tickets ya están implementados según [el contrato de la etapa 2](07-primer-ticket.md). Los demás endpoints siguen siendo propuestas.
 
-## Entidades
+## Entidades previstas para el MVP
+
+La migración inicial crea users, tickets y ticket_events. Contraseñas, equipos, comentarios y sesiones se incorporarán en sus etapas; el modelo completo siguiente no implica que esas funciones ya existan.
 
 | Tabla         | Campos principales                                                                                                                         | Restricciones                                                      |
 | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------ |

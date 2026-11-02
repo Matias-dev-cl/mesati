@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { TicketWorkspace } from './tickets/TicketWorkspace';
 
 type ConnectionState = 'loading' | 'ready' | 'unavailable';
 
@@ -60,15 +61,17 @@ export function App() {
           </span>
           Mesa<span className="brand-accent">TI</span>
         </a>
-        <span className="stage">Proyecto en desarrollo</span>
+        <span className="stage">Demo local</span>
       </header>
       <div className="workspace-bar">
         <span>
-          ESPACIO DE TRABAJO <b>/</b> Vista general
+          ESPACIO DE TRABAJO <b>/</b> Solicitudes
         </span>
-        <span className="avatar">MM</span>
+        <span className="avatar" title="Solicitante demo">
+          SD
+        </span>
       </div>
-      <main>
+      <main className="tickets-home">
         <section className="intro" aria-labelledby="welcome-title">
           <p className="eyebrow">TU CENTRO DE OPERACIONES TI</p>
           <h1 id="welcome-title">
@@ -85,10 +88,10 @@ export function App() {
         <section className="connection-card" aria-labelledby="connection-title">
           <div className="card-heading">
             <p className="eyebrow">ESTADO DEL ENTORNO</p>
-            <span className="step-number">01 / 06</span>
+            <span className="step-number">02 / 06</span>
           </div>
           <h2 id="connection-title">Todo comienza conectado</h2>
-          <p>Estamos preparando el entorno antes de incorporar los tickets.</p>
+          <p>Crea una solicitud y consulta sus datos guardados.</p>
           <div
             className={`connection-status ${connection}`}
             role="status"
@@ -116,39 +119,11 @@ export function App() {
           </button>
         </section>
 
-        <section className="roadmap" aria-labelledby="next-title">
-          <h2 id="next-title">Un espacio para cada parte del proceso</h2>
-          <div className="feature-grid">
-            <article>
-              <span className="feature-index">01 / SOLICITUDES</span>
-              <h3>Solicitudes claras</h3>
-              <p>Registrar una falla y consultar su avance.</p>
-              <span className="coming-soon">
-                En desarrollo <span aria-hidden="true">↗</span>
-              </span>
-            </article>
-            <article>
-              <span className="feature-index">02 / SEGUIMIENTO</span>
-              <h3>Atención con historia</h3>
-              <p>Asignar, diagnosticar y dejar una solución registrada.</p>
-              <span className="coming-soon">
-                En desarrollo <span aria-hidden="true">↗</span>
-              </span>
-            </article>
-            <article>
-              <span className="feature-index">03 / INVENTARIO</span>
-              <h3>Equipos conectados</h3>
-              <p>Relacionar cada solicitud con el equipo que la origina.</p>
-              <span className="coming-soon">
-                En desarrollo <span aria-hidden="true">↗</span>
-              </span>
-            </article>
-          </div>
-        </section>
+        <TicketWorkspace />
       </main>
       <footer>
         MesaTI · Portafolio de Matías Muñoz{' '}
-        <span>Datos ficticios · Sin tickets todavía</span>
+        <span>Datos ficticios · Solicitante demo</span>
       </footer>
     </div>
   );

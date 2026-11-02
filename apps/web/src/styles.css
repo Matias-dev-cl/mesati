@@ -247,74 +247,6 @@ button span {
   outline: 3px solid #ab8f20;
   outline-offset: 4px;
 }
-.roadmap {
-  grid-column: 1/-1;
-  padding-top: 24px;
-}
-.roadmap > h2 {
-  font-size: 17px;
-  letter-spacing: -0.3px;
-  margin: 0 0 22px;
-}
-.feature-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-.feature-grid article {
-  background: #fff;
-  border: 1px solid #e2e5ef;
-  border-radius: 14px;
-  padding: 26px;
-  position: relative;
-  overflow: hidden;
-}
-.feature-grid article:before {
-  content: '';
-  display: block;
-  width: 28px;
-  height: 4px;
-  background: #7865dc;
-  border-radius: 3px;
-  margin-bottom: 24px;
-}
-.feature-grid article:nth-child(2):before {
-  background: #5188d8;
-}
-.feature-grid article:nth-child(3):before {
-  background: #4a9d99;
-}
-.feature-index {
-  font-size: 9px;
-  letter-spacing: 1.2px;
-  color: #727d96;
-  font-weight: 700;
-}
-h3 {
-  font-size: 17px;
-  letter-spacing: -0.4px;
-  margin: 12px 0 10px;
-}
-.feature-grid p {
-  font-size: 13px;
-  color: #737c91;
-  line-height: 1.7;
-  margin: 0;
-  min-height: 44px;
-}
-.coming-soon {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 26px;
-  padding-top: 16px;
-  border-top: 1px solid #eef0f6;
-  color: #7a8095;
-  font-size: 11px;
-}
-.coming-soon span {
-  color: #8985ad;
-  font-size: 16px;
-}
 footer {
   display: flex;
   justify-content: space-between;
@@ -345,12 +277,6 @@ footer {
   main {
     grid-template-columns: 1.15fr 1fr;
     gap: 20px;
-  }
-  .feature-grid {
-    gap: 14px;
-  }
-  .feature-grid article {
-    padding: 22px;
   }
 }
 @media (max-width: 760px) {
@@ -385,9 +311,6 @@ footer {
   .connection-card {
     padding: 28px;
   }
-  .feature-grid {
-    grid-template-columns: 1fr;
-  }
   .feature-grid p {
     min-height: 0;
   }
@@ -403,5 +326,27 @@ footer {
   }
   .lead {
     font-size: 14px;
+  }
+}
+
+.tickets-home .intro {
+  min-height: 270px;
+  padding: 34px 38px;
+}
+.tickets-home h1 {
+  font-size: clamp(30px, 3.4vw, 43px);
+}
+.tickets-home .connection-card {
+  padding: 26px;
+}
+.tickets-home .connection-card .eyebrow {
+  margin-bottom: 16px;
+}
+.tickets-home .connection-card .status-detail {
+  min-height: 0;
+}
+@media (max-width: 760px) {
+  .tickets-home .intro {
+    padding: 30px 26px;
   }
 }

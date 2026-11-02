@@ -1,5 +1,7 @@
 # Entrega 1: entorno mínimo
 
+Nota de estado: este documento conserva las comprobaciones iniciales. Docker quedó resuelto en [la siguiente nota](06-docker-resuelto.md); para la versión actual, seguir el README y [la etapa 2](07-primer-ticket.md).
+
 ## Objetivo y criterios de aceptación
 
 Comprobar el recorrido navegador → API → PostgreSQL antes de construir tickets.

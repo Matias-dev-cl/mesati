@@ -22,15 +22,13 @@ export const handleError: ErrorRequestHandler = (
     return;
   }
   if (error instanceof HttpError) {
-    response
-      .status(error.status)
-      .json({
-        error: {
-          code: error.code,
-          message: error.message,
-          fields: error.fields,
-        },
-      });
+    response.status(error.status).json({
+      error: {
+        code: error.code,
+        message: error.message,
+        fields: error.fields,
+      },
+    });
     return;
   }
   const metadata = typeof error === 'object' && error !== null ? error : {};

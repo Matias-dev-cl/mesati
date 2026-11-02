@@ -1,6 +1,6 @@
 # Plan de entregas
 
-Sin fechas estimadas todavía: el ritmo dependerá de que cada entrega funcione y se comprenda. La base documental está creada; la etapa 1 está en curso y las etapas 2 a 6 siguen pendientes. No se ha evaluado todavía la comprensión de Maty.
+Sin fechas estimadas todavía: el ritmo dependerá de que cada entrega funcione y se comprenda. Las etapas 1 y 2 están implementadas y verificadas localmente. Las etapas 3 a 6 siguen pendientes. No se ha evaluado todavía la comprensión de Maty.
 
 | Etapa                      | Entregable                                                       | Verificación de salida                                                                 | Concepto que Maty debe poder explicar                  |
 | -------------------------- | ---------------------------------------------------------------- | -------------------------------------------------------------------------------------- | ------------------------------------------------------ |
@@ -26,19 +26,13 @@ La etapa 0 es una primera versión revisable: se ajusta cuando se descubre una n
 
 No convertir cada decisión rutinaria en una solicitud de aprobación. Sí explicar decisiones que cambien el alcance y respetar las pausas de aprendizaje que Maty pida.
 
-## Avance de la etapa 1
+## Avance comprobado
 
-- Implementados: interfaz inicial, API de disponibilidad, configuración de ejemplo, pool de PostgreSQL y Compose.
-- Verificados: formato, lint, tipos, 10 pruebas, compilación, 503 real directo y a través del proxy de Vite, revisión visual en escritorio y móvil.
-- Pendientes: iniciar PostgreSQL real, comprobar 200, reiniciar el entorno completo y realizar el repaso con Maty.
-- Bloqueo local: Docker Desktop falla al iniciar sus servicios por archivos de comunicación que Windows no puede abrir. Ver [diagnóstico y comandos](05-entorno-local.md).
-
-## Próxima sesión: completar etapa 1
-
-- Recuperar el funcionamiento local de Docker sin borrar volúmenes.
-- Ejecutar PostgreSQL mediante Compose y comprobar la respuesta 200 desde la API y la pantalla.
-- Comprobar apagado y reinicio de la base y recuperación mediante el botón de reintento.
-- Pedir a Maty que explique qué ejecuta cada proceso y cómo viaja la comprobación.
+- Etapa 1: Docker recuperado; PostgreSQL real devuelve 200, 503 al detenerse y 200 tras reiniciar.
+- Etapa 2: migraciones y seed repetibles, creación transaccional, listado paginado, formulario y lectura de descripción.
+- Verificados: 11 pruebas unitarias, 26 de integración, validación en pantalla, recuperación ante indisponibilidad y persistencia del ticket #1 tras reiniciar API, Vite y PostgreSQL.
+- Próxima etapa: sesiones y permisos. Antes, repasar con Maty el recorrido del ticket y las decisiones de [la etapa 2](07-primer-ticket.md).
+- La comprensión de Maty todavía no se ha evaluado; no se presenta como un objetivo ya cumplido.
 
 ## Plan de calidad
 
