@@ -2,7 +2,7 @@
 
 Proyecto de aprendizaje y portafolio: una mesa de ayuda TI con inventario básico de equipos para una empresa ficticia.
 
-**Estado:** etapa 1 en curso. La interfaz inicial y la API se ejecutan localmente; la conexión a PostgreSQL real está pendiente por un fallo de inicio de Docker Desktop en el equipo de desarrollo. Todavía no hay tickets, cuentas demo ni despliegue.
+**Estado:** entorno local conectado a PostgreSQL real. Docker funciona y se verificaron respuestas 200, 503 al detener la base y 200 al recuperarla. Queda pendiente el repaso de aprendizaje. Todavía no hay tickets, cuentas demo ni despliegue.
 
 ## Propósito
 
