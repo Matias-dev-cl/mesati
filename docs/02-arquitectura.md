@@ -1,6 +1,6 @@
 # Arquitectura y registro de decisiones
 
-Estado: diseño inicial; las carpetas y decisiones descritas aún no son implementación.
+Estado: arquitectura inicial en implementación. Ya existen la interfaz, la API y el pool de conexión; los módulos de negocio y las migraciones siguen pendientes. La conexión a una base real aún no está verificada.
 
 ## Flujo
 

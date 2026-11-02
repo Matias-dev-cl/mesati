@@ -2,6 +2,17 @@
 
 Contrato preliminar. Se concretarán los esquemas completos de petición/respuesta y errores antes de implementar cada entrega.
 
+## Contrato implementado en la etapa 1
+
+`GET /api/v1/health` ejecuta `SELECT 1` y no requiere sesión:
+
+- 200: `{ "data": { "status": "ok", "database": "up" } }`.
+- 503: `{ "data": { "status": "unavailable", "database": "down" } }`.
+- Incluye `Cache-Control: no-store`; no devuelve detalles del error de PostgreSQL.
+- El 503 describe disponibilidad, por lo que utiliza `data` en lugar del formato de error de las operaciones de negocio.
+
+Una ruta inexistente responde 404 con `{ "error": { "code": "NOT_FOUND", "message": "Ruta no encontrada." } }`. Los demás endpoints de este documento todavía son propuestas.
+
 ## Entidades
 
 | Tabla         | Campos principales                                                                                                                         | Restricciones                                                      |
